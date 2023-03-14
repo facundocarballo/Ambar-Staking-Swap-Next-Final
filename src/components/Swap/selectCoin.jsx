@@ -28,9 +28,9 @@ export const SelectCoin = ({isAmbar}) => {
             alt='img-coin'
             boxSize='40px'
             />
-            <Text fontWeight='bold'>{isAmbar ? "AMBAR" : "BNB"}</Text>
+            <Text fontWeight='bold' color='black'>{isAmbar ? "AMBAR" : "BNB"}</Text>
             <Spacer />
-            <Text color='gray.300'>Balance: {getBalanceOf()}</Text>
+            <Text color='gray.500'>Balance: {getBalanceOf()}</Text>
             <Box w='10px' />
         </HStack>
     );

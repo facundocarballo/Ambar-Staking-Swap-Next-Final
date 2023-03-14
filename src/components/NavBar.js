@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { useProvider } from '../context';
 import { getBNBCurrentPrice } from '../web3/funcs/coingecko';
-import { Image, Text } from '@chakra-ui/react';
+import { Image, Spinner, Text } from '@chakra-ui/react';
 import { AMBAR_IMAGE } from '../web3/funcs';
 
 export const NavBar = ({howToBuy}) => {
@@ -125,9 +125,10 @@ export const NavBar = ({howToBuy}) => {
         </button>
         {
           howToBuy ?
-          <a href="/buy" class="btn btn-outline">How to buy</a> :
+            <a href="/buy" class="btn btn-outline">How to buy</a> 
+          :
             wallet == null ?
-              <a class="btn btn-outline" onClick={handleConnect}>Connect Wallet</a>
+              loading ? <Spinner color='black' /> : <a class="btn btn-outline" onClick={handleConnect}>Connect Wallet</a>
             : <a class="btn btn-outline">{getCleanAddress(wallet)}</a>
         }
       </div>

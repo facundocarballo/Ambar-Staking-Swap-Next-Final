@@ -72,7 +72,9 @@ export const StakingView = () => {
   return (
     <>
       {wallet == null ? (
-        <Text color="white">Por favor, conecte su billetera.</Text>
+        <>
+        <Text color="black">Please Connect your Wallet.</Text>
+        </>
       ) : (
         <Grid templateColumns="repeat(3, 1fr)" gap={6}>
           {Plans.map((_, idx) => (
@@ -90,19 +92,3 @@ export const StakingView = () => {
   );
 };
 
-/*
-<HStack w="100%" overflowX="scroll">
-          <Box w="2px" />
-          {Plans.map((_, idx) => (
-            <div key={idx}>
-              <Box w="2px" />
-              {userHaveThisPlan(idx) ? (
-                <StakingSoldCard plan={getCorrectPlan(idx)} idx={idx} />
-              ) : (
-                <StakingSellCard info={getInfoPlan(idx)} idx={idx} />
-              )}
-              <Box w="2px" />
-            </div>
-          ))}
-        </HStack>
-*/

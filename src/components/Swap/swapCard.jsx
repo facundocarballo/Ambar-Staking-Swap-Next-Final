@@ -178,20 +178,26 @@ export const SwapCard = () => {
 
   // Component
   return wallet == null ? (
-    <Text>Please connect your wallet.</Text>
+    <Text color='black'>Please connect your wallet.</Text>
   ) : (
-    <VStack minW="350px" bg="gray.800" borderRadius={16}>
+    <VStack
+      minW="350px"
+      bg="gray.200"
+      borderRadius={16}
+      border="2px"
+      borderColor="white"
+    >
       <Box h="10px" />
       <HStack w="full">
         <Box w="10px" />
-        <Text color="white" fontWeight="bold">
+        <Text color="black" fontWeight="bold">
           Swap
         </Text>
         <Spacer />
       </HStack>
       <HStack w="full">
         <Box w="10px" />
-        <Text color="gray.300">Trade tokens in an instant</Text>
+        <Text color="gray.500">Trade tokens in an instant</Text>
         <Spacer />
       </HStack>
       <Divider />
@@ -201,11 +207,14 @@ export const SwapCard = () => {
         disabled={PAIR == null}
         onChange={(e) => handleSetAmount(e.currentTarget.value, 0)}
         borderRadius={15}
+        fontSize='15px'
+        color='black'
+        bg='#EAF8FF'
         w="80%"
         h="100px"
-        bg="gray.600"
       />
-      <Circle bg="gray.600" w="50px" h="50px" onClick={handleChangeCoins}>
+      <Box h='5px' />
+      <Circle bg="#EAF8FF" w="50px" h="50px" onClick={handleChangeCoins}>
         <Image
           src="https://i.ibb.co/yN9mQCR/exchange-2-verde-removebg-preview.png"
           alt="exchange-verde"
@@ -219,12 +228,15 @@ export const SwapCard = () => {
         disabled={PAIR == null}
         onChange={(e) => handleSetAmount(e.currentTarget.value, 1)}
         borderRadius={15}
+        fontSize='15px'
+        color='black'
+        bg='#EAF8FF'
         w="80%"
         h="100px"
-        bg="gray.600"
       />
+      <Box h='10px' />
       {!isAmbar ? (
-        <Button variant="swap" onClick={handleSwap}>
+        <Button fontSize='20px' w='125px' h='30px' variant="swap" onClick={handleSwap}>
           SWAP
         </Button>
       ) : approveAmbar ? (
@@ -232,7 +244,7 @@ export const SwapCard = () => {
           SWAP
         </Button>
       ) : (
-        <Button onClick={handleApprove}>Approve</Button>
+        <Button variant='callToAction' onClick={handleApprove}>Approve</Button>
       )}
       <Box h="10px" />
     </VStack>

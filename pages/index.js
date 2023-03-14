@@ -36,8 +36,9 @@ export default function Home() {
 
       </Head>
       <NavBar howToBuy={true}/>
+
       <main>
-        <article>
+        <article className="article">
           <section className="section hero" aria-label="hero" data-section="">
             <div className="container">
               <div className="hero-content">
@@ -485,7 +486,9 @@ export default function Home() {
           </section>
         </article>
       </main>
+      
       <footer className="footer">
+        {/* Se ve bien */}
         <div className="footer-top" data-section="">
           <div className="container">
             <div className="footer-brand">

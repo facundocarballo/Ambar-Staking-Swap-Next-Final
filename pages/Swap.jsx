@@ -50,7 +50,7 @@ const Swap = () => {
       <NavBar howToBuy={false} />
       <VStack>
         <Box h="120px" />
-        <Heading>AMBAR SWAP</Heading>
+        <Heading color='black'>AMBAR SWAP</Heading>
         <Box h="50px" />
         <SwapCard />
       </VStack>

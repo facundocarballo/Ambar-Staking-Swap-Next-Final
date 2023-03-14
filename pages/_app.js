@@ -4,8 +4,8 @@ import { theme } from '@/styles/theme';
 
 export default function App({ Component, pageProps }) {
   return <ChakraProvider theme={theme}>
-    <AmbarProvider>
-      <Component {...pageProps} />
-    </AmbarProvider>
-  </ChakraProvider>
+      <AmbarProvider>
+        <Component {...pageProps} />
+      </AmbarProvider>
+    </ChakraProvider>
 }

@@ -5,8 +5,6 @@ import {
   Spacer,
   Box,
   Text,
-  Heading,
-  Divider,
   Button,
   Image,
   Accordion,
@@ -39,7 +37,7 @@ export const StakingSellCard = ({ info, idx }) => {
     ExecutivePlan,
     ERC20,
     wallet,
-    update_plan
+    update_plan,
   } = useProvider();
   const [loading, setLoading] = React.useState(false);
   const [amount, setAmount] = React.useState("");
@@ -223,14 +221,20 @@ export const StakingSellCard = ({ info, idx }) => {
     if (busdSelected) return BUSD_IMAGE;
     if (usdtSelected) return USDT_IMAGE;
     if (bnbSelected) return BNB_IMAGE;
-    return AMBAR_IMAGE; 
+    return AMBAR_IMAGE;
   };
 
   // Component
   return (
     <VStack>
-      <VStack bg="black" border="1px solid #fff" borderRadius={16} w="350px" minH='550px'>
-        <VStack bg="gray.700" borderRadius="16px 16px 1px 1px" w="full">
+      <VStack
+        bg="gray.200"
+        border="1px solid #fff"
+        borderRadius={16}
+        w="350px"
+        minH="550px"
+      >
+        <VStack bg="#7645D9" borderRadius="16px 16px 1px 1px" w="full">
           <Box h="5px" />
           <HStack w="full">
             <Box w="5px" />
@@ -241,7 +245,7 @@ export const StakingSellCard = ({ info, idx }) => {
               </HStack>
               <HStack>
                 <Box w="1px" />
-                <Text fontSize="10px" color="gray.500">
+                <Text fontSize="10px" color="gray.400">
                   {info.description}
                 </Text>
               </HStack>
@@ -265,23 +269,22 @@ export const StakingSellCard = ({ info, idx }) => {
             borderRadius={16}
             border="1px solid #ccc"
             w="full"
-            bg="gray.800"
           >
             <Box h="10px" />
 
             <HStack w="full">
               <Box w="5px" />
-              <Text color="white">Interes Diario:</Text>
+              <Text color="black">Daily Interes:</Text>
               <Spacer />
-              <Text color="white">{info.interesRate}</Text>
+              <Text color="black">{info.interesRate}</Text>
               <Box w="5px" />
             </HStack>
 
             <HStack w="full">
               <Box w="5px" />
-              <Text color="white">Total Retorno</Text>
+              <Text color="black">Total Return</Text>
               <Spacer />
-              <Text color="white">{info.totalReturn}</Text>
+              <Text color="black">{info.totalReturn}</Text>
               <Box w="5px" />
             </HStack>
 
@@ -290,40 +293,56 @@ export const StakingSellCard = ({ info, idx }) => {
           <Box w="5px" />
         </HStack>
         <Box h="5px" />
-        <Text>Selecciona la Moneda</Text>
+        <Text color='black'>Select Currency</Text>
         <HStack w="full">
           <Spacer />
           <Button
+            fontSize="15px"
+            w="80px"
+            h="30px"
             onClick={handleSelectAmbar}
-            variant={ambarSelected ? "selected" : "outline"}
+            variant={ambarSelected ? "selected" : "notSelected"}
           >
             AMBAR
           </Button>
           <Button
+            fontSize="15px"
+            w="80px"
+            h="30px"
             onClick={handleSelectBusd}
-            variant={busdSelected ? "selected" : "outline"}
+            variant={busdSelected ? "selected" : "notSelected"}
           >
             BUSD
           </Button>
           <Button
+            fontSize="15px"
+            w="80px"
+            h="30px"
             onClick={handleSelectUsdt}
-            variant={usdtSelected ? "selected" : "outline"}
+            variant={usdtSelected ? "selected" : "notSelected"}
           >
             USDT
           </Button>
           <Button
+            fontSize="15px"
+            w="80px"
+            h="30px"
             onClick={handleSelectBnb}
-            variant={bnbSelected ? "selected" : "outline"}
+            variant={bnbSelected ? "selected" : "notSelected"}
           >
             BNB
           </Button>
           <Spacer />
         </HStack>
         <Box h="15px" />
-        <Text>Ingresa la Cantidad a Invertir</Text>
+        <Text color='black'>Amount of your Investment</Text>
         <Input
+          color='black'
+          border='1px solid #000'
           value={amount}
           placeholder="Cantidad a Invertir"
+          fontSize="15px"
+          h="30px"
           w="85%"
           onChange={(e) => setAmount(e.currentTarget.value)}
         />
@@ -341,7 +360,7 @@ export const StakingSellCard = ({ info, idx }) => {
               onClick={handleBuyPlan}
               variant="selected"
             >
-              ADQUIRIR PLAN
+              Enable Contract
             </Button>
           ) : (
             <Button
@@ -353,7 +372,7 @@ export const StakingSellCard = ({ info, idx }) => {
                 isDisabled_min_one_erc20_selected()
               }
             >
-              APROBAR
+              Approve
             </Button>
           )
         ) : (
@@ -366,57 +385,61 @@ export const StakingSellCard = ({ info, idx }) => {
             onClick={handleBuyPlan}
             variant="selected"
           >
-            ADQUIRIR PLAN
+            Enable Contract
           </Button>
         )}
         {isOutOfRange() ? (
           <Text color="red" fontSize="11px">
-            La cantidad introducida no es apropiada para este plan.
+            This amount doesn't match with this plan.
           </Text>
         ) : null}
         {wallet == null ? (
           <Text color="red" fontSize="11px">
-            Por favor, conecta tu billetera para poder Adquirir un plan.
+            Please, connect your wallet.
           </Text>
         ) : null}
         <Box h="5px" />
-
-        <Accordion allowToggle w="full">
-          <AccordionItem>
+        
+        <Accordion color='black' allowToggle w="full">
+          <AccordionItem color='black'>
             <h2>
               <AccordionButton>
                 <HStack w="full">
                   <Spacer />
-                  <Text color="white">Detalles</Text>
-                  <AccordionIcon color="white" />
+                  <Text fontSize='15px' color="black">Details</Text>
+                  <AccordionIcon color="black" />
                 </HStack>
               </AccordionButton>
             </h2>
-            <AccordionPanel>
+            <AccordionPanel color='black'>
               <HStack w="full">
                 <Box w="10px" />
-                <Text>Desposito Minimo</Text>
+                <Text>Min Deposit</Text>
                 <Spacer />
-                <Text>${info.minDeposit} | {info.minBNB} BNB</Text>
+                <Text>
+                  ${info.minDeposit} | {info.minBNB} BNB
+                </Text>
                 <Box w="10px" />
               </HStack>
               <HStack w="full">
                 <Box w="10px" />
-                <Text>Desposito Maximo</Text>
+                <Text>Max Deposit</Text>
                 <Spacer />
-                <Text>${info.maxDeposit} | {info.maxBNB} BNB</Text>
+                <Text>
+                  ${info.maxDeposit} | {info.maxBNB} BNB
+                </Text>
                 <Box w="10px" />
               </HStack>
               <HStack w="full">
                 <Box w="10px" />
-                <Text>Devolucion Deposito</Text>
+                <Text>Payback</Text>
                 <Spacer />
                 <Text>YES</Text>
                 <Box w="10px" />
               </HStack>
               <HStack w="full">
                 <Box w="10px" />
-                <Text>Total Retorno</Text>
+                <Text>Total Return</Text>
                 <Spacer />
                 <Text>{info.totalReturn}</Text>
                 <Box w="10px" />

@@ -59,7 +59,7 @@ export const StakingSoldCard = ({ plan, idx }) => {
   return (
     <VStack>
       <VStack
-        bg="black"
+        bg="gray.200"
         border="1px solid #fff"
         borderRadius={16}
         w="350px"
@@ -100,23 +100,22 @@ export const StakingSoldCard = ({ plan, idx }) => {
             borderRadius={16}
             border="1px solid #ccc"
             w="full"
-            bg="gray.800"
           >
             <Box h="10px" />
 
             <HStack w="full">
               <Box w="5px" />
-              <Text color="white">Interes Diario:</Text>
+              <Text color="black">Daily Interest:</Text>
               <Spacer />
-              <Text color="white">{plan.info.interesRate}</Text>
+              <Text color="black">{plan.info.interesRate}</Text>
               <Box w="5px" />
             </HStack>
 
             <HStack w="full">
               <Box w="5px" />
-              <Text color="white">Total Retorno</Text>
+              <Text color="black">Total Return</Text>
               <Spacer />
-              <Text color="white">{plan.info.totalReturn}</Text>
+              <Text color="black">{plan.info.totalReturn}</Text>
               <Box w="5px" />
             </HStack>
 
@@ -127,11 +126,11 @@ export const StakingSoldCard = ({ plan, idx }) => {
         <Box h="15px" />
         <HStack w="full">
           <Box w="5px" />
-          <Text color="white" fontWeight="bold">
-            Creado:
+          <Text color="black" fontWeight="bold">
+            Created:
           </Text>
           <Spacer />
-          <Text color="white" fontWeight="bold">
+          <Text color="black" fontWeight="bold">
             {plan.date_created}
           </Text>
           <Box w="5px" />
@@ -139,11 +138,11 @@ export const StakingSoldCard = ({ plan, idx }) => {
 
         <HStack w="full">
           <Box w="5px" />
-          <Text color="white" fontWeight="bold">
-            Finaliza:
+          <Text color="black" fontWeight="bold">
+            Ends:
           </Text>
           <Spacer />
-          <Text color="white" fontWeight="bold">
+          <Text color="black" fontWeight="bold">
             {plan.date_ends}
           </Text>
           <Box w="5px" />
@@ -151,22 +150,22 @@ export const StakingSoldCard = ({ plan, idx }) => {
         <Box h="10px" />
         <HStack w="full">
           <Box w="5px" />
-          <Text color="white" fontWeight="bold">
-            Inversion:
+          <Text color="black" fontWeight="bold">
+            Investment:
           </Text>
           <Spacer />
-          <Text color="white" fontWeight="bold">
+          <Text color="black" fontWeight="bold">
             {plan.investment_amount} {plan.symbol}
           </Text>
           <Box w="5px" />
         </HStack>
         <HStack w="full">
           <Box w="5px" />
-          <Text color="white" fontWeight="bold">
-            Retorno:
+          <Text color="black" fontWeight="bold">
+            Return:
           </Text>
           <Spacer />
-          <Text color="white" fontWeight="bold">
+          <Text color="black" fontWeight="bold">
             {(plan.info.interest * Number(plan.investment_amount)).toFixed(2)} {plan.symbol}
           </Text>
           <Box w="5px" />
@@ -184,7 +183,7 @@ export const StakingSoldCard = ({ plan, idx }) => {
             cursor="default"
           >
             <SliderTrack
-              bg="gray.800"
+              bg="#EAF8FF"
               h="50px"
               borderRadius={8}
               _hover={{
@@ -208,12 +207,12 @@ export const StakingSoldCard = ({ plan, idx }) => {
                   onClick={handleWithdraw}
                   cursor={getSliderValue() >= 1 ? "pointer" : "default"}
                 >
-                  <Box w="30%" />
+                  <Box w="38%" />
                   {loading ? (
                     <Spinner />
                   ) : (
-                    <Text color="white" fontWeight="bold">
-                      RETIRAR DINERO
+                    <Text color="black" fontWeight="bold">
+                      Withdraw
                     </Text>
                   )}
                 </HStack>
@@ -225,7 +224,7 @@ export const StakingSoldCard = ({ plan, idx }) => {
         </HStack>
 
         <Text color="gray.600" fontWeight="bold">
-          Contactar con Soporte
+          Contact Support.
         </Text>
       </VStack>
       <Box h="10px" />

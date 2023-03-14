@@ -159,6 +159,8 @@ body.active { overflow: hidden; }
   #REUSED STYLE
 \*-----------------------------------*/
 
+.article { background-color: #E9F9FF; }
+
 .container { padding-inline: 15px; }
 
 .btn {
@@ -237,6 +239,7 @@ body.active { overflow: hidden; }
 .section-text {
   font-size: var(--fs-5);
   margin-block: 15px 35px;
+  color: #000;
 }
 
 .section-list { margin-block-end: 35px; }
@@ -359,9 +362,20 @@ body.active { overflow: hidden; }
 
 .navbar-link:is(:hover, :focus, .active) { color: var(--blue-crayola); }
 
+
+/*-----------------------------------*\
+  #ITEM
+\*-----------------------------------*/
+
+.item-text {
+  color:#000;
+}
+
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
+
+.hero { background-color: var(--eerie-black-2); }
 
 .hero { padding-block: 150px 140px; }
 
@@ -370,13 +384,15 @@ body.active { overflow: hidden; }
 .hero-text {
   font-size: var(--fs-5);
   margin-block: 25px 40px;
-
+  color: #000;
 }
 
 
 /*-----------------------------------*\
   #INSTRUCTION
 \*-----------------------------------*/
+
+.instruction { background-color: var(--eerie-black-2); }
 
 .instruction :is(.section-title, .section-text) { text-align: center; }
 
@@ -387,6 +403,8 @@ body.active { overflow: hidden; }
   gap: 30px;
   margin-block-start: 50px;
 }
+
+.instruction-card { background-color: var(--eerie-black-2); }
 
 .instruction-card { text-align: center; }
 
@@ -410,7 +428,7 @@ body.active { overflow: hidden; }
   margin-block: 5px 15px;
 }
 
-.instruction-card .card-text { padding-inline: 20px; }
+.instruction-card .card-text { padding-inline: 20px; color: #000; }
 
 /*-----------------------------------*\
   #ABOUT
@@ -506,6 +524,7 @@ address.footer-contact-link { max-width: 30ch; }
 .copyright {
   text-align: center;
   margin-block-end: 20px;
+  color: #000;
 }
 
 .copyright-link {

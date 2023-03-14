@@ -1,6 +1,6 @@
 import React from "react";
 import { NavBar } from "@/src/components/NavBar";
-import { VStack, Box } from "@chakra-ui/react";
+import { VStack, Box, Heading } from "@chakra-ui/react";
 import { StakingView } from "@/src/components/Staking/view";
 import Head from "next/head";
 
@@ -15,7 +15,7 @@ const Staking = () => {
   // Methods
   // Component
   return isBrowser ? (
-    <>
+    <div className="fc">
       <Head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -49,10 +49,12 @@ const Staking = () => {
       </Head>
       <NavBar howToBuy={false} />
       <VStack>
-        <Box h="150px" />
+      <Box h="120px" />
+        <Heading color='black'>AMBAR STAKING</Heading>
+        <Box h="50px" />
         <StakingView />
       </VStack>
-    </>
+    </div>
   ) : null;
 };
 
