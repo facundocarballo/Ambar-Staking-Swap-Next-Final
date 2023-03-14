@@ -27,7 +27,12 @@ Contract.setProvider(BSC_MAINNET_RPC);
 export const Owner_Address = "0x9060723c22dE586c2fA5eFa07A7743F6f4a935f5";
 
 // Contract Address
-export const Contract_Beginner_Plan_Address = "0xf98C14027bA102cb8044CE18A871A099E1e5cBAd"; //"0xe6a7120ba2eB72C72C467051Dd4d1B310C787101"; //"0x7BEd86CF03F32200EAB466c47488955de3E0564c";
+export const Contract_Beginner_Plan_Address = "0xf98C14027bA102cb8044CE18A871A099E1e5cBAd";
+export const Contract_Standard_Plan_Address = "0x8Ab5Aa74e60a3f551158e1C8699426214c4C44D8";
+export const Contract_Expert_Plan_Address = "0xE025148df3972d4c97D19B4c70643D45d2124A23";
+export const Contract_Business_Plan_Address = "0xE6086C4357257Fb9B506C03Da8aC9345C32F3c40";
+export const Contract_Premium_Plan_Address = "0x4741AD7B7e10F770d88e96C74b2be708E0E25c90";
+export const Contract_Executive_Plan_Address = "0x30a126387F39C09056dC9C138bcC897e9BC2a831";
 
 // ERC20's
 export const Contract_Busd_Address = "0x2E50a44F2C744E2BcDe025028622d6349115D7Bf";
@@ -36,7 +41,7 @@ export const Contract_WBNB_Address = "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd
 export const Contract_Ambar_ERC20_Address = "0x0bcaEaB8160482801D5bC3f57ee5ED5caB2458ae";
 
 // PancakeSwap
-export const Contract_Pair_AMBAR_BNB_Address = "0xFaB8aaa174574ca62eA164F968BaBeea7e0190c9" //"0xA2C9147Bb87A117340F0cf7f9789DF3722b0fc1d";
+export const Contract_Pair_AMBAR_BNB_Address = "0xFaB8aaa174574ca62eA164F968BaBeea7e0190c9";
 export const Contract_Router_Address = "0xD99D1c33F9fC3444f8101754aBC46c52416550D1";
 
 // IMAGES
@@ -50,6 +55,11 @@ export const loadBasicData = async () => {
 
     // Investment Contracts
     const ContractBeginnerPlan = new Contract(AmbarPlanJSON.output.abi, Contract_Beginner_Plan_Address);
+    const ContractStandardPlan = new Contract(AmbarPlanJSON.output.abi, Contract_Standard_Plan_Address);
+    const ContractExpertPlan = new Contract(AmbarPlanJSON.output.abi, Contract_Expert_Plan_Address);
+    const ContractBusinessPlan = new Contract(AmbarPlanJSON.output.abi, Contract_Business_Plan_Address);
+    const ContractPremiumPlan = new Contract(AmbarPlanJSON.output.abi, Contract_Premium_Plan_Address);
+    const ContractExecutivePlan = new Contract(AmbarPlanJSON.output.abi, Contract_Executive_Plan_Address);
 
     // ERC20 Contracts
     const ContractBUSD = new Contract(ERC20_JSON.output.abi, Contract_Busd_Address);
@@ -78,75 +88,40 @@ export const loadBasicData = async () => {
         Beginner
     );
 
-    const StandarPlan = {
-        contract: null,
-        address: null,
-        info: Standar,
-        erc20: null,
-        symbol: null,
-        image: null,
-        investment_amount: null,
-        timestamp_investment_ends: null,
-        date_created: null,
-        date_ends: null,
-        is_active: false
-    }
+    const StandarPlan = await getPlanData(
+        ContractStandardPlan,
+        Contract_Standard_Plan_Address,
+        wallet,
+        Standar
+    );
 
-    const ExpertPlan = {
-        contract: null,
-        address: null,
-        info: Expert,
-        erc20: null,
-        symbol: null,
-        image: null,
-        investment_amount: null,
-        timestamp_investment_ends: null,
-        date_created: null,
-        date_ends: null,
-        is_active: false
-    }
+    const ExpertPlan = await getPlanData(
+        ContractExpertPlan,
+        Contract_Expert_Plan_Address,
+        wallet,
+        Expert
+    );
 
-    const BusinessPlan = {
-        contract: null,
-        address: null,
-        info: Business,
-        erc20: null,
-        symbol: null,
-        image: null,
-        investment_amount: null,
-        timestamp_investment_ends: null,
-        date_created: null,
-        date_ends: null,
-        is_active: false
-    }
+    const BusinessPlan = await getPlanData(
+        ContractBusinessPlan,
+        Contract_Business_Plan_Address,
+        wallet,
+        Business
+    );
 
-    const PremiumPlan = {
-        contract: null,
-        address: null,
-        info: Premium,
-        erc20: null,
-        symbol: null,
-        image: null,
-        investment_amount: null,
-        timestamp_investment_ends: null,
-        date_created: null,
-        date_ends: null,
-        is_active: false
-    }
+    const PremiumPlan = await getPlanData(
+        ContractPremiumPlan,
+        Contract_Premium_Plan_Address,
+        wallet,
+        Premium
+    );
 
-    const ExecutivePlan = {
-        contract: null,
-        address: null,
-        info: Executive,
-        erc20: null,
-        symbol: null,
-        image: null,
-        investment_amount: null,
-        timestamp_investment_ends: null,
-        date_created: null,
-        date_ends: null,
-        is_active: false
-    }
+    const ExecutivePlan = await getPlanData(
+        ContractExecutivePlan,
+        Contract_Executive_Plan_Address,
+        wallet,
+        Executive
+    );
 
 
     return {

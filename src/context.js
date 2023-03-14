@@ -15,7 +15,7 @@ export const AmbarProvider = (props) => {
     const [PAIR, setPAIR] = React.useState(null);
     const [ContractRouter, setContractRouter] = React.useState(null);
     const [BeginnerPlan, setBeginnerPlan] = React.useState(null);
-    const [StandarPlan, setStandardrPlan] = React.useState(null);
+    const [StandarPlan, setStandardPlan] = React.useState(null);
     const [ExpertPlan, setExpertPlan] = React.useState(null);
     const [BusinessPlan, setBusinessPlan] = React.useState(null);
     const [PremiumPlan, setPremiumPlan] = React.useState(null);
@@ -28,7 +28,7 @@ export const AmbarProvider = (props) => {
         setWallet(data.wallet);
         setChainID(data.chainID);
         setBeginnerPlan(data.BeginnerPlan);
-        setStandardrPlan(data.StandarPlan);
+        setStandardPlan(data.StandarPlan);
         setExpertPlan(data.ExpertPlan);
         setBusinessPlan(data.BusinessPlan);
         setPremiumPlan(data.PremiumPlan);
@@ -82,7 +82,7 @@ export const AmbarProvider = (props) => {
                     wallet,
                     Business
                 );
-                setBusinessPlanPlan(business);
+                setBusinessPlan(business);
                 break;
             case 4:
                 const premium = await getPlanData(

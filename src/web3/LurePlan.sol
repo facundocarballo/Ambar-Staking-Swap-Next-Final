@@ -1857,9 +1857,9 @@ contract LurePlan {
         uint256 _bnb_max_deposit,
         uint256 _total_interest
     ) {
-        term_days = _termDays;
-        erc20_min_deposit = _erc20_min_deposit;
-        erc20_max_deposit = _erc20_max_deposit;
+        term_days = _termDays * 1 minutes; // days
+        erc20_min_deposit = _erc20_min_deposit * 1 ether;
+        erc20_max_deposit = _erc20_max_deposit * 1 ether;
         bnb_min_deposit = _bnb_min_deposit;
         bnb_max_deposit = _bnb_max_deposit;
         total_interest = _total_interest;

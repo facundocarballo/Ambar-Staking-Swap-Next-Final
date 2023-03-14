@@ -167,7 +167,7 @@ export const StakingSoldCard = ({ plan, idx }) => {
           </Text>
           <Spacer />
           <Text color="white" fontWeight="bold">
-            {plan.info.interest * Number(plan.investment_amount)} {plan.symbol}
+            {(plan.info.interest * Number(plan.investment_amount)).toFixed(2)} {plan.symbol}
           </Text>
           <Box w="5px" />
         </HStack>
