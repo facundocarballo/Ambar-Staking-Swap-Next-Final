@@ -54,7 +54,7 @@ export const NavBar = ({howToBuy}) => {
   return (
     <header className="header" data-header="">
       <div className="container">
-        <a href="#" className="logo">
+        <a href="/" className="logo">
           <img
             src="./assets/images/logo.png"
             width={180}
