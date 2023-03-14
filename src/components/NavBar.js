@@ -1,10 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-
 import { useProvider } from '../context';
 import { getBNBCurrentPrice } from '../web3/funcs/coingecko';
-
-
+import { Image, Text } from '@chakra-ui/react';
+import { AMBAR_IMAGE } from '../web3/funcs';
 
 export const NavBar = ({howToBuy}) => {
 
@@ -105,6 +104,16 @@ export const NavBar = ({howToBuy}) => {
             </li>
           </ul>
         </nav>
+        {
+              bnbPrice == null ? null : <>
+                <Image 
+                src={AMBAR_IMAGE}
+                alt='ambar-img'
+                boxSize='50px'
+                />
+                <Text color='black'>{(Number(bnbPrice) * PAIR.price).toFixed(6)} USD</Text>
+              </>
+            }
         <button
           className="nav-toggle-btn"
           aria-label="Toggle menu"

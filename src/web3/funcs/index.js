@@ -27,7 +27,6 @@ Contract.setProvider(BSC_MAINNET_RPC);
 export const Owner_Address = "0x9060723c22dE586c2fA5eFa07A7743F6f4a935f5";
 
 // Contract Address
-export const Contract_Ambar_Address = "0x2a77B8097B7442CBe55dcEAF7Bb31c0D5eE8B9B0"; // Este contrato no es el mismo que el ERC20 Ambar
 export const Contract_Beginner_Plan_Address = "0xf98C14027bA102cb8044CE18A871A099E1e5cBAd"; //"0xe6a7120ba2eB72C72C467051Dd4d1B310C787101"; //"0x7BEd86CF03F32200EAB466c47488955de3E0564c";
 
 // ERC20's
@@ -50,7 +49,6 @@ export const loadBasicData = async () => {
     await loadWeb3();
 
     // Investment Contracts
-    const ContractAmbar = new Contract(AmbarJSON.output.abi, Contract_Ambar_Address);
     const ContractBeginnerPlan = new Contract(AmbarPlanJSON.output.abi, Contract_Beginner_Plan_Address);
 
     // ERC20 Contracts
@@ -72,11 +70,6 @@ export const loadBasicData = async () => {
     const actual_timestamp = await getActualTimestamp();
 
     const ERC20 = await getAllTokensInfo(ContractBUSD, ContractUSDT, ContractAmbarERC20, wallet, 'ether');
-
-    const Ambar = {
-        contract: ContractAmbar,
-        address: Contract_Ambar_Address
-    };
 
     const BeginnerPlan = await getPlanData(
         ContractBeginnerPlan,
@@ -159,7 +152,6 @@ export const loadBasicData = async () => {
     return {
         wallet,
         chainID,
-        Ambar,
         BeginnerPlan,
         StandarPlan,
         ExpertPlan,
@@ -185,7 +177,7 @@ export const getSymbolOfERC20 = (address) => {
             return 'BUSD';
         case Contract_Usdt_Address:
             return 'USDT';
-        case Contract_Ambar_Address:
+        case Contract_Ambar_ERC20_Address:
             return 'AMBAR';
         default:
             return 'BNB';
@@ -198,7 +190,7 @@ export const getImageOfERC20 = (address) => {
             return 'https://i.ibb.co/3C00M3S/busd.png';
         case Contract_Usdt_Address:
             return 'https://i.ibb.co/tXBk12n/usdt.png';
-        case Contract_Ambar_Address:
+        case Contract_Ambar_ERC20_Address:
             return 'https://i.ibb.co/B29Kxfp/ambar-image.png';
         default:
             return 'https://i.ibb.co/5nrV3wY/bnb.png';
