@@ -1,6 +1,6 @@
 import React from "react";
 import { NavBar } from "@/src/components/NavBar";
-import { VStack, Box, Heading } from "@chakra-ui/react";
+import { VStack, Box, Heading, Text } from "@chakra-ui/react";
 import { StakingView } from "@/src/components/Staking/view";
 import Head from "next/head";
 
@@ -47,11 +47,12 @@ const Staking = () => {
           rel="stylesheet"
         />
       </Head>
-      <NavBar howToBuy={false} />
+      <NavBar howToBuy={false} home={false} ecosystem={false} team={false} swap={false} staking={true} />
       <VStack>
       <Box h="120px" />
         <Heading color='black'>AMBAR STAKING</Heading>
-        <Box h="50px" />
+        <Text color='gray.400'>Stake and earn rewards on this tokens</Text>
+        <Box h="15px" />
         <StakingView />
       </VStack>
     </div>

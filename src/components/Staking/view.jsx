@@ -1,5 +1,13 @@
 import React from "react";
-import { HStack, Box, Text, Grid, GridItem } from "@chakra-ui/react";
+import {
+  HStack,
+  Box,
+  Text,
+  Grid,
+  GridItem,
+  VStack,
+  Image,
+} from "@chakra-ui/react";
 import { Plans } from "./data";
 import { StakingSellCard } from "./sellCard";
 import { StakingSoldCard } from "./soldCard";
@@ -73,22 +81,47 @@ export const StakingView = () => {
     <>
       {wallet == null ? (
         <>
+        <Box h="190px" />
+        <Image
+          src="https://i.ibb.co/jgR5nn6/wallet.png"
+          alt="wallet"
+          boxSize="150px"
+        />
         <Text color="black">Please Connect your Wallet.</Text>
-        </>
+      </>
       ) : (
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          {Plans.map((_, idx) => (
-            <GridItem key={idx}>
-              {userHaveThisPlan(idx) ? (
-                <StakingSoldCard plan={getCorrectPlan(idx)} idx={idx} />
-              ) : (
-                <StakingSellCard info={getInfoPlan(idx)} idx={idx} />
-              )}
-            </GridItem>
-          ))}
-        </Grid>
+        <>
+          <Grid
+            templateColumns="repeat(3, 1fr)"
+            gap={6}
+            display={{ lg: "grid", md: "grid", sm: "none", base: "none" }}
+          >
+            {Plans.map((_, idx) => (
+              <GridItem key={idx}>
+                {userHaveThisPlan(idx) ? (
+                  <StakingSoldCard plan={getCorrectPlan(idx)} idx={idx} />
+                ) : (
+                  <StakingSellCard info={getInfoPlan(idx)} idx={idx} />
+                )}
+              </GridItem>
+            ))}
+          </Grid>
+
+          <VStack
+            display={{ lg: "none", md: "none", sm: "flex", base: "flex" }}
+          >
+            {Plans.map((_, idx) => (
+              <div key={idx}>
+                {userHaveThisPlan(idx) ? (
+                  <StakingSoldCard plan={getCorrectPlan(idx)} idx={idx} />
+                ) : (
+                  <StakingSellCard info={getInfoPlan(idx)} idx={idx} />
+                )}
+              </div>
+            ))}
+          </VStack>
+        </>
       )}
     </>
   );
 };
-

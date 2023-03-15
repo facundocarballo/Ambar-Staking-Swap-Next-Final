@@ -36,7 +36,7 @@ export default function Ecosystem() {
                     </>
 
                 </Head>
-                <NavBar howToBuy={true}/>
+                <NavBar howToBuy={true} home={false} ecosystem={true} team={false} swap={false} staking={false} />
                 <main>
                     <article>
                         <section className="section hero" aria-label="hero" data-section="">

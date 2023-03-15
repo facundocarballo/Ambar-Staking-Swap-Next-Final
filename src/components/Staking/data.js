@@ -1,5 +1,5 @@
 export const Beginner = {
-    title: "Staking AMBAR, BUSD, USDT y BNB",
+    title: "Staking AMBAR, BUSD, USDT & BNB",
     description: "Stake, Earn - And more!",
     interesRate: "0.5%",
     termDays: "40",
@@ -12,7 +12,7 @@ export const Beginner = {
 };
 
 export const Standar = {
-    title: "Staking AMBAR, BUSD, USDT y BNB",
+    title: "Staking AMBAR, BUSD, USDT & BNB",
     description: "Stake, Earn - And more!",
     interesRate: "1%",
     termDays: "50",
@@ -25,7 +25,7 @@ export const Standar = {
 };
 
 export const Expert = {
-    title: "Staking AMBAR, BUSD, USDT y BNB",
+    title: "Staking AMBAR, BUSD, USDT & BNB",
     description: "Stake, Earn - And more!",
     interesRate: "1,1%",
     termDays: "50",
@@ -38,7 +38,7 @@ export const Expert = {
 };
 
 export const Business = {
-    title: "Staking AMBAR, BUSD, USDT y BNB",
+    title: "Staking AMBAR, BUSD, USDT & BNB",
     description: "Stake, Earn - And more!",
     interesRate: "1.2%",
     termDays: "30",
@@ -51,7 +51,7 @@ export const Business = {
 };
 
 export const Premium = {
-    title: "Staking AMBAR, BUSD, USDT y BNB",
+    title: "Staking AMBAR, BUSD, USDT & BNB",
     description: "Stake, Earn - And more!",
     interesRate: "1.3%",
     termDays: "30",
@@ -64,7 +64,7 @@ export const Premium = {
 };
 
 export const Executive = {
-    title: "Staking AMBAR, BUSD, USDT y BNB",
+    title: "Staking AMBAR, BUSD, USDT & BNB",
     description: "Stake, Earn - And more!",
     interesRate: "1.5%",
     termDays: "90",

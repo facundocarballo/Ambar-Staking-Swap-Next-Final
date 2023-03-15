@@ -36,7 +36,7 @@ export default function Team() {
 
             </Head>
             <>
-                <NavBar howToBuy={true} />
+            <NavBar howToBuy={true} home={false} ecosystem={false} team={true} swap={false} staking={false} />
                 <main>
                     <article>
                         <section className="section hero" aria-label="hero" data-section="">

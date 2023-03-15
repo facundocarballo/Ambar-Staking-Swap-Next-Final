@@ -178,7 +178,15 @@ export const SwapCard = () => {
 
   // Component
   return wallet == null ? (
-    <Text color='black'>Please connect your wallet.</Text>
+    <>
+      <Box h="190px" />
+      <Image
+        src="https://i.ibb.co/jgR5nn6/wallet.png"
+        alt="wallet"
+        boxSize="150px"
+      />
+      <Text color="black">Please Connect your Wallet.</Text>
+    </>
   ) : (
     <VStack
       minW="350px"
@@ -207,13 +215,13 @@ export const SwapCard = () => {
         disabled={PAIR == null}
         onChange={(e) => handleSetAmount(e.currentTarget.value, 0)}
         borderRadius={15}
-        fontSize='15px'
-        color='black'
-        bg='#EAF8FF'
+        fontSize="15px"
+        color="black"
+        bg="#EAF8FF"
         w="80%"
         h="100px"
       />
-      <Box h='5px' />
+      <Box h="5px" />
       <Circle bg="#EAF8FF" w="50px" h="50px" onClick={handleChangeCoins}>
         <Image
           src="https://i.ibb.co/yN9mQCR/exchange-2-verde-removebg-preview.png"
@@ -228,15 +236,21 @@ export const SwapCard = () => {
         disabled={PAIR == null}
         onChange={(e) => handleSetAmount(e.currentTarget.value, 1)}
         borderRadius={15}
-        fontSize='15px'
-        color='black'
-        bg='#EAF8FF'
+        fontSize="15px"
+        color="black"
+        bg="#EAF8FF"
         w="80%"
         h="100px"
       />
-      <Box h='10px' />
+      <Box h="10px" />
       {!isAmbar ? (
-        <Button fontSize='20px' w='125px' h='30px' variant="swap" onClick={handleSwap}>
+        <Button
+          fontSize="20px"
+          w="125px"
+          h="30px"
+          variant="swap"
+          onClick={handleSwap}
+        >
           SWAP
         </Button>
       ) : approveAmbar ? (
@@ -244,7 +258,9 @@ export const SwapCard = () => {
           SWAP
         </Button>
       ) : (
-        <Button variant='callToAction' onClick={handleApprove}>Approve</Button>
+        <Button variant="callToAction" onClick={handleApprove}>
+          Approve
+        </Button>
       )}
       <Box h="10px" />
     </VStack>

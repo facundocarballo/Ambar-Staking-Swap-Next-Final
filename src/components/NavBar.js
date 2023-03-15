@@ -5,10 +5,11 @@ import { getBNBCurrentPrice } from '../web3/funcs/coingecko';
 import { Image, Spinner, Text } from '@chakra-ui/react';
 import { AMBAR_IMAGE } from '../web3/funcs';
 
-export const NavBar = ({howToBuy}) => {
+export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const { loadContractData, wallet, bnbPrice, PAIR, setBnbPrice, setPAIR } = useProvider();
@@ -62,34 +63,34 @@ export const NavBar = ({howToBuy}) => {
             alt="ambar logo"
           />
         </a>
-        <nav className="navbar" data-navbar="">
+        <nav className={active ? "navbar active" : "navbar"} data-navbar="">
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="/" className="navbar-link active" data-nav-link="">
+              <a href="/" className={home ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Home
               </a>
             </li>
             <li className="navbar-item">
               <a
                 href="/ecosystem"
-                className="navbar-link"
+                className={ecosystem ? "navbar-link active" : "navbar-link"}
                 data-nav-link=""
               >
                 Ecosystem
               </a>
             </li>
             <li className="navbar-item">
-              <a href="/team" className="navbar-link" data-nav-link="">
+              <a href="/team" className={team ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Team
               </a>
             </li>
             <li className="navbar-item">
-              <a href="/Swap" className="navbar-link" data-nav-link="">
+              <a href="/Swap" className={swap ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Swap
               </a>
             </li>
             <li className="navbar-item">
-              <a href="/Staking" className="navbar-link" data-nav-link="">
+              <a href="/Staking" className={staking ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Staking
               </a>
             </li>
@@ -115,9 +116,10 @@ export const NavBar = ({howToBuy}) => {
               </>
             }
         <button
-          className="nav-toggle-btn"
+          className={active ? "nav-toggle-btn active" : "nav-toggle-btn"}
           aria-label="Toggle menu"
           data-nav-toggler=""
+          onClick={() => setActive(!active)}
         >
           <span className="line line-1" />
           <span className="line line-2" />

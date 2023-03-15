@@ -35,7 +35,8 @@ export default function Home() {
         </>
 
       </Head>
-      <NavBar howToBuy={true}/>
+      
+      <NavBar howToBuy={true} home={true} ecosystem={false} team={false} swap={false} staking={false} />
 
       <main>
         <article className="article">

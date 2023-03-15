@@ -47,11 +47,12 @@ const Swap = () => {
           rel="stylesheet"
         />
       </Head>
-      <NavBar howToBuy={false} />
+      <NavBar howToBuy={false} home={false} ecosystem={false} team={false} swap={true} staking={false} />
       <VStack>
         <Box h="120px" />
         <Heading color='black'>AMBAR SWAP</Heading>
-        <Box h="50px" />
+        <Text color='gray.400'>Swap your tokens here!</Text>
+        <Box h="20px" />
         <SwapCard />
       </VStack>
     </>
