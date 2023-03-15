@@ -10,11 +10,11 @@ import { getPairInfo } from "./pair";
 import { getPlanData } from "./plans";
 import { getAllTokensInfo } from "./tokens";
 
-export const BSC_MAINNET_RPC = "https://data-seed-prebsc-1-s1.binance.org:8545/";
+export const BSC_MAINNET_RPC = "https://bsc-dataseed1.binance.org/"; //"https://data-seed-prebsc-1-s1.binance.org:8545/";
 
 // 97 -> Testnet
 // 56 -> Mainnet
-export const CHAIN_ID = 97;
+export const CHAIN_ID = 56; //97;
 
 // const { ethereum, web3 } = window;
 
@@ -24,25 +24,25 @@ const Contract = require('web3-eth-contract');
 Contract.setProvider(BSC_MAINNET_RPC);
 
 // Owner Address
-export const Owner_Address = "0x9060723c22dE586c2fA5eFa07A7743F6f4a935f5";
+export const Owner_Address = "0xF1d298e09B0e50a37ba30A6E510314524aCAcfAa";
 
 // Contract Address
-export const Contract_Beginner_Plan_Address = "0xf98C14027bA102cb8044CE18A871A099E1e5cBAd";
-export const Contract_Standard_Plan_Address = "0x8Ab5Aa74e60a3f551158e1C8699426214c4C44D8";
-export const Contract_Expert_Plan_Address = "0xE025148df3972d4c97D19B4c70643D45d2124A23";
-export const Contract_Business_Plan_Address = "0xE6086C4357257Fb9B506C03Da8aC9345C32F3c40";
-export const Contract_Premium_Plan_Address = "0x4741AD7B7e10F770d88e96C74b2be708E0E25c90";
-export const Contract_Executive_Plan_Address = "0x30a126387F39C09056dC9C138bcC897e9BC2a831";
+export const Contract_Beginner_Plan_Address = "0xD3995aB5DaC6E457C3A3dCCe28117f1AB92b0AE8"; //"0xf98C14027bA102cb8044CE18A871A099E1e5cBAd";
+export const Contract_Standard_Plan_Address = "0x975ebC3DE01A7987f0CE7B48c709cf48BF6535d2"; //"0x8Ab5Aa74e60a3f551158e1C8699426214c4C44D8";
+export const Contract_Expert_Plan_Address = "0x954a92FBBd347eE95efD7b8c92581eE815cE551b"; //"0xE025148df3972d4c97D19B4c70643D45d2124A23";
+export const Contract_Business_Plan_Address = "0x5E64f152547bC0A585fD99030dee28078c5A91E2"; //"0xE6086C4357257Fb9B506C03Da8aC9345C32F3c40";
+export const Contract_Premium_Plan_Address = "0xf4784114181F6cd7f417D233b3E2cCd3034F0A5a"; //"0x4741AD7B7e10F770d88e96C74b2be708E0E25c90";
+export const Contract_Executive_Plan_Address = "0xBda1fbF645807d40a42ad11AD518b546F8e5A9c7"; //"0x30a126387F39C09056dC9C138bcC897e9BC2a831";
 
 // ERC20's
-export const Contract_Busd_Address = "0x2E50a44F2C744E2BcDe025028622d6349115D7Bf";
-export const Contract_Usdt_Address = "0x24DA85920bbF1be872632aF232ac34a2C5580Ef6";
-export const Contract_WBNB_Address = "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd";
-export const Contract_Ambar_ERC20_Address = "0x0bcaEaB8160482801D5bC3f57ee5ED5caB2458ae";
+export const Contract_Busd_Address = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"; //"0x2E50a44F2C744E2BcDe025028622d6349115D7Bf";
+export const Contract_Usdt_Address = "0x55d398326f99059fF775485246999027B3197955"; //"0x24DA85920bbF1be872632aF232ac34a2C5580Ef6";
+export const Contract_WBNB_Address = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"; //"0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd";
+export const Contract_Ambar_ERC20_Address = "0x5116AF9818423090cA8b361b3fD2D8Cd76ef94E5"; //"0x0bcaEaB8160482801D5bC3f57ee5ED5caB2458ae";
 
 // PancakeSwap
-export const Contract_Pair_AMBAR_BNB_Address = "0xFaB8aaa174574ca62eA164F968BaBeea7e0190c9";
-export const Contract_Router_Address = "0xD99D1c33F9fC3444f8101754aBC46c52416550D1";
+export const Contract_Pair_AMBAR_BNB_Address = "0xA2C9147Bb87A117340F0cf7f9789DF3722b0fc1d"; //"0xFaB8aaa174574ca62eA164F968BaBeea7e0190c9";
+export const Contract_Router_Address = "0x10ED43C718714eb63d5aA57B78B54704E256024E"; //"0xD99D1c33F9fC3444f8101754aBC46c52416550D1";
 
 // IMAGES
 export const BUSD_IMAGE = "https://i.ibb.co/3C00M3S/busd.png";

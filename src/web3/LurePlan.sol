@@ -1824,22 +1824,21 @@ contract LurePlan {
         "Only the development wallet can call to this function.";
 
     // ERC20
-    ERC20 public BUSD = ERC20(0x2E50a44F2C744E2BcDe025028622d6349115D7Bf);
-    ERC20 public USDT = ERC20(0x24DA85920bbF1be872632aF232ac34a2C5580Ef6);
-    ERC20 public AMBAR = ERC20(0x0bcaEaB8160482801D5bC3f57ee5ED5caB2458ae);
+    ERC20 public BUSD = ERC20(0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56);
+    ERC20 public USDT = ERC20(0x55d398326f99059fF775485246999027B3197955);
+    ERC20 public AMBAR = ERC20(0x5116AF9818423090cA8b361b3fD2D8Cd76ef94E5);
 
     // Addresses
-    address public developmentWallet =
-        0x9060723c22dE586c2fA5eFa07A7743F6f4a935f5;
-    address public ownerWallet = 0xfb31e8110a814b45369AB971B067bB159cce78D2;
+    address public developmentWallet;
+    address public ownerWallet = 0xF1d298e09B0e50a37ba30A6E510314524aCAcfAa;
 
     // Planes
-    uint256 public term_days = 40 days;
-    uint256 public erc20_min_deposit = 50 ether;
-    uint256 public erc20_max_deposit = 149 ether;
-    uint256 public bnb_min_deposit = 0.15 ether;
-    uint256 public bnb_max_deposit = 0.45 ether;
-    uint256 public total_interest = 20;
+    uint256 public term_days;
+    uint256 public erc20_min_deposit;
+    uint256 public erc20_max_deposit;
+    uint256 public bnb_min_deposit;
+    uint256 public bnb_max_deposit;
+    uint256 public total_interest;
     uint256 public _id;
 
     // Cada billetera puede tener un solo plan a la vez.
@@ -1857,12 +1856,14 @@ contract LurePlan {
         uint256 _bnb_max_deposit,
         uint256 _total_interest
     ) {
-        term_days = _termDays * 1 minutes; // days
+        term_days = _termDays * 1 days;
         erc20_min_deposit = _erc20_min_deposit * 1 ether;
         erc20_max_deposit = _erc20_max_deposit * 1 ether;
         bnb_min_deposit = _bnb_min_deposit;
         bnb_max_deposit = _bnb_max_deposit;
         total_interest = _total_interest;
+
+        developmentWallet = msg.sender;
     }
 
     // Public Methods
