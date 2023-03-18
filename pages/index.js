@@ -110,8 +110,7 @@ export default function Home() {
                     </figure>
                     <h3 className="h3 card-title">NFT Marketplace</h3>
                     <p className="card-text">
-                      The world's first NFT marketplace for digital art related to
-                      our games and metaverse.
+                      {"The world's first NFT marketplace for digital art related to our games and metaverse."}
                     </p>
                   </div>
                 </li>

@@ -134,8 +134,7 @@ export default function Ecosystem() {
                                 <div className="about-content">
                                     <h2 className="h2 section-title">NFT Marketplace</h2>
                                     <p className="section-text">
-                                        The world's first NFT marketplace for digital art related to our
-                                        games and metaverse.
+                                        {"The world's first NFT marketplace for digital art related to our games and metaverse."}
                                     </p>
                                     <ul className="section-list">
                                         <li className="section-item">

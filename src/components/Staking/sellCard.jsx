@@ -390,7 +390,7 @@ export const StakingSellCard = ({ info, idx }) => {
         )}
         {isOutOfRange() ? (
           <Text color="red" fontSize="11px">
-            This amount doesn't match with this plan.
+            {"This amount doesn't match with this plan."}
           </Text>
         ) : null}
         {wallet == null ? (
@@ -446,7 +446,7 @@ export const StakingSellCard = ({ info, idx }) => {
               </HStack>
               <HStack w="full">
                 <Box w="10px" />
-                <Text>Term Dias</Text>
+                <Text>Term Days</Text>
                 <Spacer />
                 <Text>{info.termDays}</Text>
                 <Box w="10px" />

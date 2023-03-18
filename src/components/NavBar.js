@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { useState, useEffect } from "react";
 import { useProvider } from '../context';
 import { getBNBCurrentPrice } from '../web3/funcs/coingecko';
@@ -55,53 +56,53 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
   return (
     <header className="header" data-header="">
       <div className="container">
-        <a href="/" className="logo">
+        <Link href="/" className="logo">
           <img
             src="./assets/images/logo.png"
             width={180}
             height={180}
             alt="ambar logo"
           />
-        </a>
+        </Link>
         <nav className={active ? "navbar active" : "navbar"} data-navbar="">
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="/" className={home ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <Link href="/" className={home ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a
+              <Link
                 href="/ecosystem"
                 className={ecosystem ? "navbar-link active" : "navbar-link"}
                 data-nav-link=""
               >
                 Ecosystem
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a href="/team" className={team ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <Link href="/team" className={team ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Team
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a href="/Swap" className={swap ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <Link href="/Swap" className={swap ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Swap
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a href="/Staking" className={staking ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <Link href="/Staking" className={staking ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Staking
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a
+              <Link
                 href="https://ambarcoin.gitbook.io/ambar"
                 className="navbar-link"
                 data-nav-link=""
               >
                 Whitepaper
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -127,11 +128,11 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
         </button>
         {
           howToBuy ?
-            <a href="/buy" class="btn btn-outline">How to buy</a> 
+            <Link href="/buy" class="btn btn-outline">How to buy</Link> 
           :
             wallet == null ?
-              loading ? <Spinner color='black' /> : <a class="btn btn-outline" onClick={handleConnect}>Connect Wallet</a>
-            : <a class="btn btn-outline">{getCleanAddress(wallet)}</a>
+              loading ? <Spinner color='black' /> : <Link class="btn btn-outline" onClick={handleConnect}>Connect Wallet</Link>
+            : <Link class="btn btn-outline">{getCleanAddress(wallet)}</Link>
         }
       </div>
     </header>
