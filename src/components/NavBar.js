@@ -56,53 +56,53 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
   return (
     <header className="header" data-header="">
       <div className="container">
-        <Link href="/" className="logo">
+        <a href="/" className="logo">
           <img
             src="./assets/images/logo.png"
             width={180}
             height={180}
             alt="ambar logo"
           />
-        </Link>
+        </a>
         <nav className={active ? "navbar active" : "navbar"} data-navbar="">
           <ul className="navbar-list">
             <li className="navbar-item">
-              <Link href="/" className={home ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <a href="/" className={home ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Home
-              </Link>
+              </a>
             </li>
             <li className="navbar-item">
-              <Link
+              <a
                 href="/ecosystem"
                 className={ecosystem ? "navbar-link active" : "navbar-link"}
                 data-nav-link=""
               >
                 Ecosystem
-              </Link>
+              </a>
             </li>
             <li className="navbar-item">
-              <Link href="/team" className={team ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <a href="/team" className={team ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Team
-              </Link>
+              </a>
             </li>
             <li className="navbar-item">
-              <Link href="/Swap" className={swap ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <a href="/Swap" className={swap ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Swap
-              </Link>
+              </a>
             </li>
             <li className="navbar-item">
-              <Link href="/Staking" className={staking ? "navbar-link active" : "navbar-link"} data-nav-link="">
+              <a href="/Staking" className={staking ? "navbar-link active" : "navbar-link"} data-nav-link="">
                 Staking
-              </Link>
+              </a>
             </li>
             <li className="navbar-item">
-              <Link
+              <a
                 href="https://ambarcoin.gitbook.io/ambar"
                 className="navbar-link"
                 data-nav-link=""
               >
                 Whitepaper
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
@@ -128,11 +128,11 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
         </button>
         {
           howToBuy ?
-            <Link href="/buy" class="btn btn-outline">How to buy</Link> 
+            <a href="/buy" className="btn btn-outline">How to buy</a> 
           :
             wallet == null ?
-              loading ? <Spinner color='black' /> : <Link class="btn btn-outline" onClick={handleConnect}>Connect Wallet</Link>
-            : <Link class="btn btn-outline">{getCleanAddress(wallet)}</Link>
+              loading ? <Spinner color='black' /> : <a className="btn btn-outline" onClick={handleConnect}>Connect Wallet</a>
+            : <a className="btn btn-outline">{getCleanAddress(wallet)}</a>
         }
       </div>
     </header>
@@ -153,11 +153,11 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="Swap" className={activeLink === 'swap' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Swap</Nav.Link>
-              <Nav.Link href="Staking" className={activeLink === 'staking' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Staking</Nav.Link>
-              <Nav.Link href="Market " className={activeLink === 'market' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Market</Nav.Link>
-              <Nav.Link href="https://ambarcoin.gitbook.io/ambar" className={activeLink === 'whitepaper' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('whitepaper')}>Whitepaper</Nav.Link>
+              <Nav.a href="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.a>
+              <Nav.a href="Swap" className={activeLink === 'swap' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Swap</Nav.a>
+              <Nav.a href="Staking" className={activeLink === 'staking' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Staking</Nav.a>
+              <Nav.a href="Market " className={activeLink === 'market' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Market</Nav.a>
+              <Nav.a href="https://ambarcoin.gitbook.io/ambar" className={activeLink === 'whitepaper' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('whitepaper')}>Whitepaper</Nav.a>
             </Nav>
             {
               bnbPrice == null ? null : <>
