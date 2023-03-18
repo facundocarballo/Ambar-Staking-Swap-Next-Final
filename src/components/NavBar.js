@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { useState, useEffect } from "react";
 import { useProvider } from '../context';
 import { getBNBCurrentPrice } from '../web3/funcs/coingecko';
-import { Image, Spinner, Text } from '@chakra-ui/react';
+import { HStack, Image, Spinner, Text } from '@chakra-ui/react';
 import { AMBAR_IMAGE } from '../web3/funcs';
 
-export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
+export const NavBar = ({ howToBuy, home, ecosystem, team, swap, staking }) => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
@@ -107,15 +107,19 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
           </ul>
         </nav>
         {
-              bnbPrice == null ? null : <>
-                <Image 
-                src={AMBAR_IMAGE}
-                alt='ambar-img'
-                boxSize='50px'
+          bnbPrice == null ? null :
+            <li className="navbar-item">
+              <HStack>
+                <Image
+                  src={AMBAR_IMAGE}
+                  alt='ambar-img'
+                  boxSize='50px'
                 />
                 <Text color='black'>{(Number(bnbPrice) * PAIR.price).toFixed(6)} USD</Text>
-              </>
-            }
+              </HStack>
+            </li>
+
+        }
         <button
           className={active ? "nav-toggle-btn active" : "nav-toggle-btn"}
           aria-label="Toggle menu"
@@ -128,11 +132,11 @@ export const NavBar = ({howToBuy, home, ecosystem, team, swap, staking }) => {
         </button>
         {
           howToBuy ?
-            <a href="/buy" className="btn btn-outline">How to buy</a> 
-          :
+            <a href="/buy" className="btn btn-outline">How to buy</a>
+            :
             wallet == null ?
               loading ? <Spinner color='black' /> : <a className="btn btn-outline" onClick={handleConnect}>Connect Wallet</a>
-            : <a className="btn btn-outline">{getCleanAddress(wallet)}</a>
+              : <a className="btn btn-outline">{getCleanAddress(wallet)}</a>
         }
       </div>
     </header>
